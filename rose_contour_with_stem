@@ -1,0 +1,26 @@
+import numpy as np
+from matplotlib import pyplot as plt
+
+plt.rcParams["figure.figsize"] = [10.50, 6.50]
+plt.rcParams["figure.autolayout"] = True
+
+#flower
+x = np.linspace(-3, 3, 400)
+y = np.linspace(-3, 3, 400)
+X, Y = np.meshgrid(x, y)
+
+LHS = (X**2 + Y**2)**5
+RHS = 144 * X**2 * Y**2 * (Y**2 - X**2)**2
+Z = LHS - RHS
+plt.contourf(X, Y, Z, levels=50, cmap='plasma', alpha=0.7) #gradient fill inside the petals (didn't come out like i wanted it to, but it looks cute i guess)
+plt.contour(X, Y, Z, levels=[0], colors='crimson')
+#stem
+def f1(a):
+    return -4*a**2
+
+x1 = np.linspace(0, np.sqrt(1.5), 100)
+y1 = f1(x1)
+
+plt.plot(x1, y1, color='green')
+plt.grid(False)
+plt.show()
