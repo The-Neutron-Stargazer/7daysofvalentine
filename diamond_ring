@@ -1,0 +1,72 @@
+import numpy as np
+from matplotlib import pyplot as plt
+
+plt.rcParams["figure.figsize"] = [10.50, 6.50]
+plt.rcParams["figure.autolayout"] = True
+#check out all equations used on: https://www.desmos.com/calculator/vc2ahyosq8
+# diamond
+# lattices
+x = np.linspace(-3, 3, 100)
+plt.plot(x, np.full_like(x, 4), 'b')
+
+x = np.linspace(0, 4, 100)
+plt.plot(x, x - 1, 'b')
+
+x = np.linspace(-4, 0, 100)
+plt.plot(x, -x - 1, 'b')
+
+x = np.linspace(-4, 4, 100)
+plt.plot(x, np.full_like(x, 3), 'b')
+
+x = np.linspace(0, 2, 100)
+plt.plot(x, 2*x - 1, 'b')
+
+x = np.linspace(-2, 0, 100)
+plt.plot(x, -2*x - 1, 'b')
+
+y = np.linspace(-1, 3, 100)
+plt.plot(np.full_like(y, 0), y, 'b')
+
+#zig-zag lines
+x = np.linspace(-4, -3, 100)
+plt.plot(x, x + 7, 'b')
+
+x = np.linspace(3, 4, 100)
+plt.plot(x, -x + 7, 'b')
+
+x = np.linspace(2, 3, 100)
+plt.plot(x, x + 1, 'b')
+
+x = np.linspace(-3, -2, 100)
+plt.plot(x, -x + 1, 'b')
+
+x = np.linspace(-2, -1, 100)
+plt.plot(x, x + 5, 'b')
+
+x = np.linspace(-1, 0, 100)
+plt.plot(x, -x + 3, 'b')
+
+x = np.linspace(0, 1, 100)
+plt.plot(x, x + 3, 'b')
+
+x = np.linspace(1, 2, 100)
+plt.plot(x, -x + 5, 'b')
+
+#ring
+theta = np.linspace(0, 2 * np.pi, 300)
+x = 2 * np.cos(theta)  # Radius = sqrt(4) = 2
+y = 2 * np.sin(theta) - 3
+plt.plot(x, y, 'purple')
+
+x = np.sqrt(2.6) * np.cos(theta)  # Radius = sqrt(2.6)
+y = np.sqrt(2.6) * np.sin(theta) - 3
+plt.plot(x, y, 'purple')
+
+plt.xlabel("x-axis")
+plt.ylabel("y-axis")
+plt.axhline(0, color='black', linewidth=0.5)
+plt.axvline(0, color='black', linewidth=0.5)
+plt.grid(True, linestyle='--', alpha=0.6)
+plt.title("Happy Propose Day")
+plt.grid(False)
+plt.show()
